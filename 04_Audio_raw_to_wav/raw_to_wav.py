@@ -9,12 +9,16 @@ class Converter():
     def __init__(self, framerate):
         self.framerate: int = int(framerate)
 
+    def create_output_file_name(self, file, output_dir):
+        basename = os.path.basename(file).replace(".raw", ".wav")
+        output_file = join(output_dir, basename)
+        return output_file
+
     def convert_files(self, input_files, output_dir):
         """! Iterates throw all files and converts them
         """
         for file in input_files:
-            basename = os.path.basename(file).replace(".raw", ".wav")
-            output_file = join(output_dir, basename)
+            output_file = self.create_output_file_name(file, output_dir)
             self.convert_raw_to_wav(file, output_file)
 
     def convert_raw_to_wav(self, input_path: str, output_path: str) -> None:
