@@ -32,15 +32,5 @@ mydict_copy_by_value = mydict.copy() # or dict(mydict)
 print(f"memory adress of mydict_copy_by_value:{hex(id(mydict_copy_by_value))}")
 print(f"memory adress of mydict:{hex(id(mydict))}")
 
-from collections import defaultdict
 
-def def_value():
-    return 0
-
-defdict = defaultdict(def_value)
-defdict["a"] = 2
-defdict["b"] = 1
-defdict["c"] = 6
-print(f"\ndefdict: {defdict}")
-print(f"no exception if value not exist defdict['t']: {defdict['t']}")
 
