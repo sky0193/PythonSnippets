@@ -13,11 +13,11 @@ class CountdownApp:
         # Set the background transparency to 70%
         #self.master.attributes("-alpha", 0.7)
 
-        self.master.geometry("50x60+100+100")
+        self.master.geometry("100x100+100+100")
         self.master.wm_attributes("-topmost", 1)
         self.master.wm_attributes('-transparentcolor','black')
         
-        self.count = 10
+        self.count = 15
         self.running = False  # Flag to check if countdown is running
 
         # Use the keyboard library to set a global hotkey for the F1 key
@@ -25,19 +25,20 @@ class CountdownApp:
         keyboard.add_hotkey('F2', self.reset_count)
         keyboard.add_hotkey('F3', self.reset_count)
         keyboard.add_hotkey('F4', self.reset_count)
+        keyboard.add_hotkey('F5', self.reset_count)
         keyboard.add_hotkey('F12', self.exit_program)
 
         self.master.bind('<ButtonPress-1>', self.start_drag)
         self.master.bind('<B1-Motion>', self.drag_window)
 
         # Create a label widget with transparent background
-        self.label = tk.Label(self.master, text="", font=("Arial bold", 32),  bg='black', fg='#C8A2C8', anchor='center')
+        self.label = tk.Label(self.master, text="", font=("Helvetica Bold", 32), bg='black', fg='white', anchor='center')
         self.label.pack(fill=tk.BOTH, expand=1)
 
         self.update_label()  # Call the update_label method to display the countdown text
 
     def reset_count(self):
-        self.count = 10
+        self.count = 14
         if not self.running:
             self.start_countdown()
 
