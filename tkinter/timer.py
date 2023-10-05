@@ -9,14 +9,13 @@ class CountdownApp:
         self.master.title("Countdown Timer")
         
         # Set the background transparency to 70%
-        self.master.attributes("-alpha", 0.0)
+        self.master.attributes("-alpha", 1)
         self.master.configure(bg='white')  # Setting background color to white for better visibility
-
-        self.label = ttk.Label(self.master, text="", font=("Arial", 48), background='white')
+        self.master.geometry("40x80")
+        self.master.wm_attributes("-topmost", 1)
+        
+        self.label = ttk.Label(self.master, text="", font=("Arial", 20), background='white')
         self.label.pack(pady=20)
-
-        self.button = ttk.Button(self.master, text="Start Countdown", command=self.start_countdown)
-        self.button.pack(pady=20)
 
         self.count = 10
         self.running = False  # Flag to check if countdown is running
@@ -36,7 +35,6 @@ class CountdownApp:
             self.count -= 1
             self.master.after(1000, self.start_countdown)  # after 1 second (1000 ms), call the function again
         else:
-            self.label.config(text="Done!")
             self.running = False
 
 if __name__ == "__main__":
