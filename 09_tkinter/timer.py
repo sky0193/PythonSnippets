@@ -15,7 +15,7 @@ class CountdownApp:
 
         self.master.geometry("100x100+100+100")
         self.master.wm_attributes("-topmost", 1)
-        self.master.wm_attributes('-transparentcolor','black')
+        #self.master.wm_attributes('-transparentcolor','black')
         
         self.count = 15
         self.running = False  # Flag to check if countdown is running
