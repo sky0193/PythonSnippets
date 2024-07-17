@@ -3,13 +3,19 @@
 import re
 
     
-def test1():
+def test1a():
     text = "asdesadp"
     pattern = r'[pea]'
 
     matches = re.findall(pattern, text)
     print(matches)
-    
+
+def test1b():
+    text = "asdesadp"
+    pattern = r'pea'
+
+    matches = re.findall(pattern, text)
+    print(matches)
     
 def test2():
     text = "this is number 32432442"
